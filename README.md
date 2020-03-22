@@ -14,6 +14,10 @@ Get all your project's git info, across multiple environments, all in one place.
 
 4. Inside static, create a `config.json` file. This file will contain your environment, projects, domain, etc. related info. There is a `example.config.json` for your convenience.
 
+5. `cd server` and run `yarn` or `npm install`
+
+6. `cd client` and run `yarn` or `npm install`
+
 Let's roll. :tada:
 
 # Start
