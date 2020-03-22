@@ -2,13 +2,17 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 1rem;
 }
 
 .Env_MainContainer {
   display: flex;
   flex-direction: column;
-  /* padding: 0rem 3rem; */
+  border-bottom: 5px solid #e7e7e7;
+  margin-top: 1rem;
+}
+
+.Env_MainContainer:last-child {
+  border-bottom: none;
 }
 
 .Env_Name {
@@ -39,7 +43,7 @@
 
   .Env_MainContainer {
     /* padding: 2rem; */
-    margin: 0rem auto;
+    margin: 1rem auto;
     padding-top: 0rem;
   }
 }
