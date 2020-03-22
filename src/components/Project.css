@@ -1,0 +1,21 @@
+.Project {
+  width: 20rem;
+  max-width: 22rem;
+  background: rgba(24, 200, 200, 0.2);
+  border-left: 8px solid rgba(24, 200, 200, 0.5);
+  padding: 1rem;
+  border-radius: 4px;
+  line-height: 1.3;
+  margin: 2rem 0;
+  box-shadow: 5px 3px 46px 12px #ddd;
+}
+
+.Project_Name {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.Project_Branch_Name {
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+}

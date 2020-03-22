@@ -1,27 +1,7 @@
-@font-face {
-  font-family: "ProximaNova";
-  font-weight: normal;
-  src: url("https://static.ambitionbox.com/fonts/proxima-nova/400.woff2")
-    format("woff2");
-}
-
-@font-face {
-  font-family: "ProximaNova";
-  font-weight: bold;
-  src: url("https://static.ambitionbox.com/fonts/proxima-nova/700.woff2")
-    format("woff2");
-}
-
-body,
-html {
-  font-family: "ProximaNova";
-}
-
 .App_Header {
   display: flex;
   height: 2rem;
   align-items: center;
-  color: #283e56;
   padding: 1rem;
   border-bottom: 2px solid #eeeeee;
 }
@@ -48,24 +28,4 @@ html {
   .App_UserBranding {
     font-size: 1.2rem;
   }
-}
-
-/* Environment */
-
-.Env_Listing {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.Env_MainContainer {
-  display: flex;
-  flex-direction: column;
-  padding: 0rem 3rem;
-}
-
-.Env_Name {
-  text-align: center;
-  font-size: 3rem;
 }

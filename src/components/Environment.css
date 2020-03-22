@@ -1,0 +1,44 @@
+.Env_Listing {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.Env_MainContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 3rem;
+}
+
+.Env_Name {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.Env_Link {
+  text-decoration: none;
+
+  color: inherit;
+}
+
+.Env_Link:hover {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .Env_Name {
+    text-align: start;
+    font-size: 1rem;
+  }
+
+  .Env_Listing {
+    flex-direction: column;
+  }
+
+  .Env_MainContainer {
+    padding: 2rem;
+    padding-top: 0rem;
+  }
+}
