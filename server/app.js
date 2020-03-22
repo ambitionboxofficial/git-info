@@ -17,11 +17,6 @@ app.use(express.static(path.join(__dirname, CLIENT_BUILD_PATH)));
 // An api endpoint that returns a short list of items
 app.get("/api/repo/info", Repo.getRepoInfo);
 
-// Handles any requests that don't match the ones above
-app.get("*", (req, res) => {
-  return res.sendFile(path.join(__dirname + CLIENT_BUILD_PATH));
-});
-
 const port = process.env.PORT || 3000;
 app.listen(port);
 

@@ -2,10 +2,20 @@ import React from "react";
 import Loading from "./Loading";
 import "./Project.css";
 
+const errors = {
+  API_ERROR: "Is your server down?",
+  BAD_REQUEST: "BAD_REQUEST: "
+};
+
 export default class Project extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { ...props.data, loading: true, error: false };
+    this.state = {
+      ...props.data,
+      loading: true,
+      error: false,
+      errorMessage: ""
+    };
   }
 
   getRepoInfo = path => {
@@ -18,10 +28,24 @@ export default class Project extends React.Component {
     // fetch project info here
     this.getRepoInfo(this.state.path)
       .then(data => {
-        this.setState({ ...data.data, loading: false });
+        const { data: repoInfo, success, message } = data;
+
+        if (success) {
+          this.setState({ ...repoInfo, loading: false });
+        } else {
+          this.setState({
+            error: true,
+            loading: false,
+            errorMessage: errors.BAD_REQUEST + message
+          });
+        }
       })
-      .catch(err => {
-        this.setState({ error: true, loading: false });
+      .catch(() => {
+        this.setState({
+          error: true,
+          loading: false,
+          errorMessage: errors.API_ERROR
+        });
       });
   };
 
@@ -39,6 +63,7 @@ export default class Project extends React.Component {
       background,
       borderColor,
       loading,
+      errorMessage,
       error
     } = this.state;
 
@@ -47,7 +72,7 @@ export default class Project extends React.Component {
         <div className="Project_Name">{projectName}</div>
 
         {loading && !error && <Loading></Loading>}
-        {!loading && error && <p>Is your server down?</p>}
+        {!loading && error && <p>{errorMessage}</p>}
         {!loading && !error && (
           <>
             <div className="Project_Info">
