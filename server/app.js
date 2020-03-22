@@ -3,25 +3,22 @@ require("dotenv").config();
 const { calculate } = require("./partials/gitter");
 
 const express = require("express");
-const mustacheExpress = require("mustache-express");
 
 const { readFileSync } = require("fs");
 
 const app = express();
-app.engine("html", mustacheExpress());
-app.set("view engine", "html");
-app.set("views", __dirname + "/views");
 
-const config = JSON.parse(readFileSync("gitinfoconfig.json").toString());
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, "client/build")));
 
-app.get("/", function(req, res) {
-  calculate(config).then(stats => {
-    res.render("index", {
-      title: config.name,
-      stats,
-      spacingAround: stats.length < 2
-    });
-  });
+// An api endpoint that returns a short list of items
+app.get("/api/repo/info", (req, res) => {
+  return res.send({});
+});
+
+// Handles any requests that don't match the ones above
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
 const port = process.env.PORT || 3000;
