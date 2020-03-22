@@ -1,28 +1,71 @@
+@font-face {
+  font-family: "ProximaNova";
+  font-weight: normal;
+  src: url("https://static.ambitionbox.com/fonts/proxima-nova/400.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  font-weight: bold;
+  src: url("https://static.ambitionbox.com/fonts/proxima-nova/700.woff2")
+    format("woff2");
+}
+
+body,
+html {
+  font-family: "ProximaNova";
+}
+
 .App_Header {
   display: flex;
-  justify-content: space-around;
-  height: 6vh;
+  height: 2rem;
   align-items: center;
   color: #283e56;
   padding: 1rem;
   border-bottom: 2px solid #eeeeee;
 }
 
-.App_GitPromotion {
-  display: flex;
-  align-items: center;
-}
-
-.App_GitPromotion > a {
-  text-decoration: none;
-  padding-left: 1rem;
-}
-
 .App_MainDecoration {
   font-weight: 700;
   font-size: 2rem;
+  flex-grow: 0.45;
+  padding-left: 4rem;
+  align-items: center;
+  display: flex;
 }
 
 .App_UserBranding {
   font-size: 1.4rem;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 768px) {
+  .App_MainDecoration {
+    font-size: 1.7rem;
+    padding-left: 0rem;
+  }
+  .App_UserBranding {
+    font-size: 1.2rem;
+  }
+}
+
+/* Environment */
+
+.Env_Listing {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.Env_MainContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 3rem;
+}
+
+.Env_Name {
+  text-align: center;
+  font-size: 3rem;
 }

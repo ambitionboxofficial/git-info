@@ -1,5 +1,5 @@
 export default {
-  name: "AmbitionBox - Staging",
+  name: "AmbitionBox",
   environments: [
     {
       name: "Staging 1",
