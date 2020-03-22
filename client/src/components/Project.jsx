@@ -1,5 +1,7 @@
 import React from "react";
 import Loading from "./Loading";
+import { API_URL } from "../constants";
+
 import "./Project.css";
 
 const errors = {
@@ -19,9 +21,9 @@ export default class Project extends React.Component {
   }
 
   getRepoInfo = path => {
-    return fetch(
-      `http://localhost:3001/api/repo/info?path=${path}`
-    ).then(data => data.json());
+    return fetch(`${API_URL}/api/repo/info?path=${path}`).then(data =>
+      data.json()
+    );
   };
 
   componentDidMount = () => {

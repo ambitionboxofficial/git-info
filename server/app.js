@@ -11,6 +11,10 @@ const CLIENT_BUILD_PATH = "/../client/build/";
 
 const Repo = require("./routes/Repo");
 
+app.get("/config.json", (req, res) => {
+  return res.sendFile(path.join(__dirname, "./static", "config.json"));
+});
+
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, CLIENT_BUILD_PATH)));
 

@@ -17,6 +17,6 @@ html {
   margin: 0;
   background: #80808010;
   /* font-family: "Helvetica"; */
-  font-family: "ProximaNova";
+  font-family: "ProximaNova", "Helvetica";
   color: #283e56;
 }
