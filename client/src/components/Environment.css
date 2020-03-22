@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
+  padding: 0rem 3rem;
 }
 
 .Env_MainContainer:last-child {
@@ -43,7 +44,7 @@
 
   .Env_MainContainer {
     margin: 1rem auto;
-    padding-top: 0rem;
+    padding: 0rem;
     border-bottom: 5px solid #e7e7e7;
   }
 }
