@@ -1,7 +1,6 @@
 import React from "react";
 import ReactLoading from "react-loading";
 export const Types = [
-  "blank",
   "balls",
   "bars",
   "bubbles",
