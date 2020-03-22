@@ -5,7 +5,7 @@ import "./Project.css";
 export default class Project extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { ...props.data, loading: true };
+    this.state = { ...props.data, loading: true, error: false };
   }
 
   getRepoInfo = path => {
@@ -16,9 +16,13 @@ export default class Project extends React.Component {
 
   componentDidMount = () => {
     // fetch project info here
-    this.getRepoInfo(this.state.path).then(data => {
-      this.setState({ ...data.data, loading: false });
-    });
+    this.getRepoInfo(this.state.path)
+      .then(data => {
+        this.setState({ ...data.data, loading: false });
+      })
+      .catch(err => {
+        this.setState({ error: true, loading: false });
+      });
   };
 
   render() {
@@ -34,15 +38,17 @@ export default class Project extends React.Component {
       branch,
       background,
       borderColor,
-      loading
+      loading,
+      error
     } = this.state;
 
     return (
       <div className="Project" style={{ background, borderColor }}>
         <div className="Project_Name">{projectName}</div>
 
-        {loading && <Loading></Loading>}
-        {!loading && (
+        {loading && !error && <Loading></Loading>}
+        {!loading && error && <p>Is your server down?</p>}
+        {!loading && !error && (
           <>
             <div className="Project_Info">
               <img
@@ -53,15 +59,15 @@ export default class Project extends React.Component {
               <span className="Branch_Name">{branch}</span>
             </div>
 
-            <div class="Commit_Info">
+            <div className="Commit_Info">
               <span>
                 {hash} — {subject}
               </span>
-              <span class="Commit_Author">
+              <span className="Commit_Author">
                 <strong>by </strong>
                 {authorName}
               </span>
-              <span class="Commit_Date">
+              <span className="Commit_Date">
                 {relativeDate} ({date})
               </span>
             </div>

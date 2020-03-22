@@ -1,9 +1,9 @@
 .App_Header {
   display: flex;
+  background: white;
   height: 2rem;
   align-items: center;
   padding: 1rem;
-  border-bottom: 2px solid #e7e7e7;
 }
 
 .App_MainDecoration {
@@ -18,6 +18,23 @@
 .App_UserBranding {
   font-size: 1.4rem;
   font-weight: 400;
+}
+
+.Footer {
+  display: flex;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.Footer_Link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.Footer_Link:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {

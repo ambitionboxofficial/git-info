@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Environment from "./components/Environment";
 import "./App.css";
 
@@ -20,6 +21,7 @@ function App({ config }) {
           return <Environment data={env} key={index}></Environment>;
         })}
       </div>
+      <Footer></Footer>
     </div>
   );
 }

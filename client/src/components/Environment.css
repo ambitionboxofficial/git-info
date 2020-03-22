@@ -7,7 +7,6 @@
 .Env_MainContainer {
   display: flex;
   flex-direction: column;
-  border-bottom: 5px solid #e7e7e7;
   margin-top: 1rem;
 }
 
@@ -42,8 +41,8 @@
   }
 
   .Env_MainContainer {
-    /* padding: 2rem; */
     margin: 1rem auto;
     padding-top: 0rem;
+    border-bottom: 5px solid #e7e7e7;
   }
 }

@@ -1,4 +1,4 @@
-/* @font-face {
+@font-face {
   font-family: "ProximaNova";
   font-weight: normal;
   src: url("https://static.ambitionbox.com/fonts/proxima-nova/400.woff2")
@@ -10,13 +10,13 @@
   font-weight: bold;
   src: url("https://static.ambitionbox.com/fonts/proxima-nova/700.woff2")
     format("woff2");
-} */
+}
 
 body,
 html {
   margin: 0;
   background: #80808010;
-  font-family: "Helvetica";
-  /* font-family: "ProximaNova"; */
+  /* font-family: "Helvetica"; */
+  font-family: "ProximaNova";
   color: #283e56;
 }
