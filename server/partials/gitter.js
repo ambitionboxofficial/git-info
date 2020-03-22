@@ -40,7 +40,7 @@ const getRepoInfo = path => {
         const history = commits[0];
 
         const {
-          authorName: name,
+          authorName,
           committerEmail: email,
           committerDate: date,
           committerDateRel: relativeDate,
@@ -55,7 +55,7 @@ const getRepoInfo = path => {
         const seed = Math.floor(Math.random() * 999999);
 
         const result = {
-          name,
+          authorName,
           projectName: path.split("/").pop(),
           email,
           date,
@@ -64,8 +64,8 @@ const getRepoInfo = path => {
           hash,
           subject,
           branch,
-          color: getColor(seed, 0.2),
-          borderColor: getColor(seed, 0.5)
+          background: getColor(seed, 0.3),
+          borderColor: getColor(seed, 0.7)
         };
         resolve(result);
       }

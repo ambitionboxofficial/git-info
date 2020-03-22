@@ -15,7 +15,35 @@
   font-size: 1.5rem;
 }
 
-.Project_Branch_Name {
+.Branch_Name {
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.Commit_Info > .Commit_Author {
+  padding-top: 1rem;
+}
+
+.Commit_Info > span {
+  display: block;
+
+  color: rgb(20, 14, 58);
+}
+
+.Commit_Info > .Commit_Date {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+.Project_Info {
+  margin: 0.5rem 0rem;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.Branch_Name {
   margin-left: 0.5rem;
   font-size: 1.1rem;
 }

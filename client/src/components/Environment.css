@@ -8,7 +8,7 @@
 .Env_MainContainer {
   display: flex;
   flex-direction: column;
-  padding: 0rem 3rem;
+  /* padding: 0rem 3rem; */
 }
 
 .Env_Name {
@@ -38,7 +38,8 @@
   }
 
   .Env_MainContainer {
-    padding: 2rem;
+    /* padding: 2rem; */
+    margin: 0rem auto;
     padding-top: 0rem;
   }
 }
