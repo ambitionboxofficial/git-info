@@ -2,6 +2,8 @@
 
 Get all your project's git info, across multiple environments, all in one place.
 
+![git-info demo image](./assets/git-info.png)
+
 # Installation
 
 1. Clone/download this repo to wherever you want to host your git-info app
