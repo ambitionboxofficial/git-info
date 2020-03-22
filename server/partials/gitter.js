@@ -32,6 +32,7 @@ const getColor = (seed, alpha) => {
 const getRepoInfo = path => {
   return new Promise((resolve, reject) => {
     const options = { ...GITLOG_DEFAULTS, repo: path };
+
     gitlog(options, (err, commits) => {
       if (err) resolve({});
 
@@ -124,4 +125,4 @@ const formatResponse = (config, data) => {
   return newEnvironment;
 };
 
-module.exports = { calculate };
+module.exports = { getRepoInfo };

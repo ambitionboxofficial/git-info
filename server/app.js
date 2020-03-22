@@ -1,25 +1,25 @@
 require("dotenv").config();
 
-const { calculate } = require("./partials/gitter");
-
+const path = require("path");
 const express = require("express");
-
-const { readFileSync } = require("fs");
-
 const app = express();
 
+const CLIENT_BUILD_PATH = "/../client/build/";
+
+const Repo = require("./routes/Repo");
+
 // Serve the static files from the React app
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, CLIENT_BUILD_PATH)));
 
 // An api endpoint that returns a short list of items
-app.get("/api/repo/info", (req, res) => {
-  return res.send({});
-});
+app.get("/api/repo/info", Repo.getRepoInfo);
 
 // Handles any requests that don't match the ones above
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  return res.sendFile(path.join(__dirname + CLIENT_BUILD_PATH));
 });
 
 const port = process.env.PORT || 3000;
 app.listen(port);
+
+console.log("App listening on %s", port);
