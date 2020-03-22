@@ -1,4 +1,3 @@
-const { readdirSync } = require("fs");
 const { execSync } = require("child_process");
 const gitlog = require("gitlog");
 const randomColor = require("randomcolor");
@@ -15,11 +14,6 @@ const GITLOG_DEFAULTS = {
     "authorName"
   ]
 };
-
-const getDirectories = source =>
-  readdirSync(source, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name);
 
 const getColor = (seed, alpha) => {
   return randomColor({
@@ -71,58 +65,6 @@ const getRepoInfo = path => {
       }
     });
   });
-};
-
-const calculate = config => {
-  const { environments } = config;
-
-  const allPromises = [];
-
-  environments.forEach(env => {
-    const { projects } = env;
-
-    projects.forEach(project => {
-      const { path } = project;
-      allPromises.push(getRepoInfo(path));
-    });
-  });
-
-  return Promise.all(allPromises).then(data => {
-    return formatResponse(config, data);
-  });
-};
-
-const formatResponse = (config, data) => {
-  const dataIndexMap = {};
-
-  data.forEach((d, index) => {
-    const { path } = d;
-    dataIndexMap[path] = index;
-  });
-
-  const { environments } = config;
-
-  const newEnvironment = environments.map(env => {
-    const { projects } = env;
-    const newProjects = projects.map(project => {
-      const { path } = project;
-      const enrichedProject = {
-        ...project,
-        ...data[dataIndexMap[path]]
-      };
-
-      return enrichedProject;
-    });
-
-    const enrichedProject = {
-      ...env,
-      projects: newProjects
-    };
-
-    return enrichedProject;
-  });
-
-  return newEnvironment;
 };
 
 module.exports = { getRepoInfo };
