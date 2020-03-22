@@ -2,7 +2,7 @@
 
 Get all your project's git info, across multiple environments, all in one place.
 
-![git-info demo image](./assets/git-info.png)
+<img alt="git-info demo image" width="300" src="./assets/git-info.png"/>
 
 # Installation
 
