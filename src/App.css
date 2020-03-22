@@ -1,0 +1,28 @@
+.App_Header {
+  display: flex;
+  justify-content: space-around;
+  height: 6vh;
+  align-items: center;
+  color: #283e56;
+  padding: 1rem;
+  border-bottom: 2px solid #eeeeee;
+}
+
+.App_GitPromotion {
+  display: flex;
+  align-items: center;
+}
+
+.App_GitPromotion > a {
+  text-decoration: none;
+  padding-left: 1rem;
+}
+
+.App_MainDecoration {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.App_UserBranding {
+  font-size: 1.4rem;
+}

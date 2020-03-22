@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "./components/Header";
 import "./App.css";
 
 function App({ config }) {
@@ -6,7 +7,7 @@ function App({ config }) {
 
   return (
     <div className="App">
-      <h1 className="pageTitle">{name}</h1>
+      <Header appName={name}></Header>
     </div>
   );
 }
